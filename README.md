@@ -5,12 +5,31 @@ This Project is an interview coding challenge. We have provided these starter fi
 ## Challenge:
 
 We have provided the initial structure for a TODO list. Most components have been pre-wired for you. We expect you to:
-<ol>
-  <li>finish writing the task-update component</li>
-  <li>implement the updateTask function inside task.service.ts</li>
-  <li>implement a put route on the backend in the app.ts file</li>
-</ol> 
+1. Finish writing the `task-update` component.
+2. Implement the `updateTask` function inside `task.service.ts`.
+3. Implement a put route on the backend in the `app.ts` file.
 
 ## Getting Started
+We have provided Dockerfiles and a docker-compose.yml file for this project. Follow the steps below to start the project using Docker.
 
-We have provided Dockerfiles and a docker-compose file for the project. To start the project using docker (assuming you have installed it and docker-compose), in the directory where you find this README, use the command 'docker-compose up --build'. Once the containers are built and running, you will be able to view the project at 'http://localhost:4200' in your browser. To stop the containers, you may use Ctrl + C in the terminal where you started them. Then run the command 'docker-compose down' to remove the containers from your docker daemon.
+### Prerequisites
+Ensure you have both Docker and Docker Compose installed.
+
+### Starting the Project
+1. Open a terminal and navigate to the directory where this README.md is located.
+2. Run the following command to build and start the Docker containers:
+   ```sh
+   docker-compose up --build
+   ```
+3. Once the containers are built and running, you can view the project in your browser at:
+   ```sh
+   http://localhost:4200
+   ```
+
+### Stopping the Containers
+To stop the containers:
+1. In the terminal where you started them, press `Ctrl + C`.
+2. Then run the following command to remove the containers from your Docker daemon:
+   ```sh
+   docker-compose down
+   ```
