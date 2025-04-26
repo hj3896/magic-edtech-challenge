@@ -1,14 +1,21 @@
 <!-- You do not need to change this file -->
 <div>
-  <h2>Task Display Component</h2>
-  @for (task of tasks$ | async; track $index) {
-  <div>
-    <h3>{{ task.name }}</h3>
-    <p>id: <strong>{{ task._id }}</strong></p>
-    <p>Due Date: <strong>{{ task.due }}</strong></p>
-    <p>Description: <strong>{{ task.description }}</strong></p>
-    <p>Complete: <strong>{{ task.complete }}</strong></p>
-  </div>
-  <br />
-  }
+  <table style="border: 1px solid; width:100%">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Due Date</th>
+      <th>Description</th>
+      <th>Complete</th>
+    </tr>
+    @for (task of tasks$ | async; track $index) {
+    <tr>
+      <td><strong>{{ task._id }}</strong></td>
+      <td>{{ task.name }}</td>
+      <td><strong>{{ task.due }}</strong></td>
+      <td>{{ task.description }}</td>
+      <td><strong>{{ task.complete }}</strong></td>
+    </tr>
+    }
+  </table>
 </div>

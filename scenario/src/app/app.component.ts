@@ -10,5 +10,4 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [HttpClientModule, TasksComponent, RouterOutlet],
   templateUrl: './app.component.html',
 })
-export class AppComponent {
-}
+export class AppComponent {}

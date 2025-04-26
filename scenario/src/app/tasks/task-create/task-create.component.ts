@@ -1,7 +1,7 @@
 // No need to change this file
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
-import { Task } from '../../task-types';
+import { Task } from '../task-types';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -13,20 +13,20 @@ import { FormsModule } from '@angular/forms';
 export class TaskCreateComponent {
   protected task: Task = {
     name: '',
-    due: new Date(),
+    due: new Date().toISOString().substring(0, 10),
     description: '',
-    complete: false
+    complete: false,
   };
 
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService) {}
 
   protected onSubmit(): void {
-    this.taskService.createTask(this.task)
+    this.taskService.createTask(this.task);
     this.task = {
       name: '',
-      due: new Date(),
+      due: new Date().toISOString().substring(0, 10),
       description: '',
-      complete: false
+      complete: false,
     };
   }
 }

@@ -1,7 +1,28 @@
 <!-- You do not need to change this file -->
 <div>
+  <div style="width:100%;display: flex;">
+    <h1>Welcome to your todo list app!</h1>
+    <div style=" margin:auto 0;margin-left:auto;">
+      <button style="height:30px;margin:5px 2px" (click)="showScreen('CREATE')">Create</button>
+      <button style="height:30px;margin:5px 2px" (click)="showScreen('UPDATE')">Update</button>
+      <button style="height:30px;margin:5px 2px" (click)="showScreen('DELETE')">Delete</button>
+    </div>
+  </div>
   <app-task-display></app-task-display>
-  <app-task-create></app-task-create>
-  <app-task-delete></app-task-delete>
-  <app-task-update></app-task-update>
+</div>
+<div *ngIf="screen!='NONE'"
+  style="top:40%;left:40%; width: 400px;display:block;position: absolute;border:1px solid;padding: 10px">
+  <div style="width: 100%;display: flex;">
+    <button (click)="showScreen('NONE')" style="margin-left: auto;">X</button>
+  </div>
+  <div style="width: 100%;">
+    <app-task-create *ngIf="screen=='CREATE'"></app-task-create>
+  </div>
+  <div style="width: 100%;">
+    <app-task-delete *ngIf="screen=='DELETE'"></app-task-delete>
+  </div>
+
+  <div style="width: 100%;">
+    <app-task-update *ngIf="screen=='UPDATE'"></app-task-update>
+  </div>
 </div>
