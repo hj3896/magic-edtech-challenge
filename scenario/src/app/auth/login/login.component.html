@@ -1,0 +1,14 @@
+<!-- You do not need to change this file -->
+<h2>Login</h2>
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div>
+    <label for="name">Username:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.username" required>
+  </div>
+  <div>
+    <label for="description">Password:</label>
+    <input type="password" id="description" name="description" [(ngModel)]="user.password" required>
+  </div>
+  <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+</form>
+<br />

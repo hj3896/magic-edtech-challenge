@@ -1,0 +1,17 @@
+<h2>Signup</h2>
+<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+  <div>
+    <label for="name">Username:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="user.username" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="user.password" required>
+  </div>
+  <div>
+    <label for="repassword">Confirm Password:</label>
+    <input type="password" id="repassword" name="repassword" [(ngModel)]="repassword" required>
+  </div>
+  <button type="submit" [disabled]="!signupForm.form.valid">Signup</button>
+</form>
+<br />
