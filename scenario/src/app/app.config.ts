@@ -3,15 +3,11 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 
 import { routes } from './app.routes';
-import { authInterceptor } from './auth.interceptor'; // import your interceptor path
+import { authInterceptor } from './auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    provideHttpClient(
-      withInterceptors([
-        authInterceptor, // <<== Register here!
-      ])
-    ),
+    provideHttpClient(withInterceptors([authInterceptor])),
   ],
 };

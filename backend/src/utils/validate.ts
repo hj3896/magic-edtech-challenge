@@ -1,7 +1,7 @@
 import { body } from "express-validator";
 
 export const validateTask = [
-  body("title").notEmpty().withMessage("Title is required"),
+  body("name").notEmpty().withMessage("Name is required"),
   body("description").optional().isString(),
 ];
 

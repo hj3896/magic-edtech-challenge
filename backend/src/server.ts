@@ -5,7 +5,7 @@ import { log, setupLogging } from "./configs/logger";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5200;
 
 setupLogging(app);
 connectDB()

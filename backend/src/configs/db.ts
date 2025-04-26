@@ -3,7 +3,7 @@ import { log } from "./logger";
 
 const connectDB = async (): Promise<void> => {
   try {
-    const dbURI = process.env.MONGO_URI || "mongodb://localhost:27017/tasks";
+    const dbURI = process.env.MONGODB_URI || "mongodb://localhost:27017/tasks";
     await mongoose.connect(dbURI);
     log.info("MongoDB connected successfully");
   } catch (err) {

@@ -3,12 +3,13 @@ import { Task, TaskAndId } from './task-types';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { environment } from '../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:5000/api/tasks';
+  private apiUrl = `${environment.apiUrl}/tasks`;
   private tasksSubject = new BehaviorSubject<Array<TaskAndId>>([]);
   tasks$ = this.tasksSubject.asObservable();
 

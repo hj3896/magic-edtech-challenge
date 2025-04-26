@@ -1,20 +1,20 @@
 version: '3'
 services:
-  # frontend:
-  #   build: ./scenario
-  #   ports:
-  #     - "4200:4200"
-  #   depends_on:
-  #     - backend
+  frontend:
+    build: ./scenario
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
 
-  # backend:
-  #   build: ./backend
-  #   ports:
-  #     - "5200:5200"
-  #   environment:
-  #     - MONGODB_URI=mongodb://database:27017/tasks
-  #   depends_on:
-  #     - database
+  backend:
+    build: ./backend
+    ports:
+      - "5200:5200"
+    environment:
+      - MONGODB_URI=mongodb://database:27017/tasks
+    depends_on:
+      - database
 
   database:
     image: mongo:latest

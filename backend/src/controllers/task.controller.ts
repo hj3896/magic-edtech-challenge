@@ -50,12 +50,9 @@ export const updateTask = async (req: Request, res: Response) => {
     if (!task || !task.is_active)
       return res.status(404).json({ msg: "Resource not found" });
 
-    if (task.created_by.toString() !== req.user!.id)
-      return res.status(403).json({ msg: "Access denied" });
-
     const updated = await Task.findByIdAndUpdate(
       req.params.id,
-      { ...req.body.task, updated_by: req.user!.id },
+      { ...req.body.task },
       {
         new: true,
       }
